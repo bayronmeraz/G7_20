@@ -14,7 +14,7 @@
             public function get_estudiante($numeroAlumno){
                 $conectar = parent::conexion();
                 parent::set_names();
-                $sql="SELECT * FROM estudiante WHERE NUMEROALUMNO = ?";
+                $sql="SELECT * FROM estudiante WHERE numeroAlumno = ?";
                 $sql=$conectar->prepare($sql);
                 $sql->bindValue(1, $numeroAlumno);
                 $sql->execute();
