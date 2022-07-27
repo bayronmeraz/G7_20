@@ -41,22 +41,19 @@
             public function update_asignatura($CodigoAsignatura, $NombreAsignatura, $Carrera, $FechaCreacion, $UnidadesValorativas, $PromedioAprobacion, $NumeroEdificio){
                 $conectar = parent::conexion();
                 parent::set_names();
-                $sql = "UPDATE asignatura SET ?, ?, ?, ?, ?, ?, ? 
-                WHERE CodigoAsignatura = ?;"; 
+                $sql = "UPDATE asignatura SET NombreAsignatura= ?, Carrera= ?, FechaCreacion= ?, UnidadesValorativas= ?, PromedioAprobacion= ?, NumeroEdificio= ? 
+                WHERE CodigoAsignatura = ?;";
                 $sql=$conectar->prepare($sql);
-                $sql->bindValue(1,$CodigoAsignatura);
-                $sql->bindValue(2,$NombreAsignatura);
-                $sql->bindValue(3,$Carrera);
-                $sql->bindValue(4,$FechaCreacion);
-                $sql->bindValue(5,$UnidadesValorativas);
-                $sql->bindValue(6,$PromedioAprobacion);
-                $sql->bindValue(7,$NumeroEdificio);
+                $sql->bindValue(1,$NombreAsignatura);
+                $sql->bindValue(2,$Carrera);
+                $sql->bindValue(3,$FechaCreacion);
+                $sql->bindValue(4,$UnidadesValorativas);
+                $sql->bindValue(5,$PromedioAprobacion);
+                $sql->bindValue(6,$NumeroEdificio);
+                $sql->bindValue(7,$CodigoAsignatura);
                 $sql->execute();
                 return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
             }
-
-
-
 
             public function delete_asignatura($CodigoAsignatura){
                 $conectar = parent::conexion();
