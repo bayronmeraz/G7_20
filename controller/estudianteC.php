@@ -30,12 +30,12 @@
       break;
 
       case "InsertEstudiante":
-        $datos=$estudiantes->insert_estudiante($body["numeroAlumno"], $body["nombre"], $body["apellidos"], $body["fechaNacimiento"], $body["direccion"], $body["altura"], $body["carrera"] );
+        $datos=$estudiantes->insert_estudiante($body["NUMERO_ALUMNO"], $body["NOMBRE"], $body["APELLIDOS"], $body["FECHA_NACIMIENTO"], $body["DIRECCION"], $body["ALTURA"], $body["CARRERA"] );
         echo json_encode("Estudiante Agregado");
       break;  
       
       case "UpdateEstudiante":
-        $datos=$estudiantes->update_estudiante($body["numeroAlumno"], $body["nombre"], $body["apellidos"], $body["fechaNacimiento"], $body["direccion"], $body["altura"], $body["carrera"] );
+        $datos=$estudiantes->update_estudiante($body["NUMERO_ALUMNO"], $body["NOMBRE"], $body["APELLIDOS"], $body["FECHA_NACIMIENTO"], $body["DIRECCION"], $body["ALTURA"], $body["CARRERA"] );
         echo json_encode("Estudiante actualizado");
       break;
 
