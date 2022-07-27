@@ -33,7 +33,18 @@
           case "insertasignatura":
             $datos=$asignatura-> insert_asignatura($body["CodigoAsignatura"],$body["NombreAsignatura"], $body["Carrera"], $body["FechaCreacion"], $body["UnidadesValorativas"], $body["PromedioAprobacion"], $body["NumeroEdificio"]);
             echo json_encode("Asignatura agregada con exito");
-            break;  
+            break;
+          
+            case "Updateasignatura":
+              $datos=$asignatura-> update_asignatura($body["CodigoAsignatura"],$body["NombreAsignatura"], $body["Carrera"], $body["FechaCreacion"], $body["UnidadesValorativas"], $body["PromedioAprobacion"], $body["NumeroEdificio"]);
+              echo json_encode("Asignatura actualizada con exito");
+              break;
+
+              case "Delteasignatura":
+                $datos= $asignatura-> delete_asignatura($body["CodigoAsignatura"]);
+                echo json_encode("Asignatura eliminada con exito");
+                break; 
+            
     }
 
 
