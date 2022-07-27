@@ -21,7 +21,7 @@
     switch($_GET["opc"]){
 
       case "Getasignaturas":
-        $datos=$asignatura->get_asignaturas();
+        $datos = $asignatura-> get_asignaturas();
         echo json_decode($datos);
         break;
       
