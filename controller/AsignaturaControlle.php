@@ -11,9 +11,30 @@
     header('Access-Control-Allow-Origin: *');  
     header('Content-Type: application/json');
 
-    require_once ("../config/conexion.php");
+    require_once("../config/conexion.php");
     require_once("../models/asignatura.php");
 
-    
+    $asignatura = new asignaturas();
+
+    $body = json_decode(file_get_contents("php://input"), true);
+
+    switch($_GET["opc"]){
+
+      case "Getasignaturas":
+        $datos=$asignatura->get_asignaturas();
+        echo json_decode($datos);
+        break;
+      
+        case "Getasignatura":
+          $datos=$asignatura-> get_asignatura($body["CodigoAsignatura"]);
+          echo json_decode($datos);
+          break; 
+          
+          case "insertasignatura":
+            $datos=$asignatura-> insert_asignatura($body["CodigoAsignatura"],$body["NombreAsignatura"], $body["Carrera"], $body["FechaCreacion"], $body["UnidadesValorativas"], $body["PromedioAprobacion"], $body["NumeroEdificio"]);
+            echo json_decode("Asignatura agregada con exito");
+            break;  
+    }
+
 
 ?>
