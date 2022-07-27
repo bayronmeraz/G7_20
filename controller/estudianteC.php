@@ -25,7 +25,7 @@
       break;
 
       case "GetEstudiante":
-        $datos=$estudiantes-> get_estudiante($body["numeroAlumno"]);
+        $datos=$estudiantes-> get_estudiante($body["NUMERO_ALUMNO"]);
         echo json_encode($datos);
       break;
 
