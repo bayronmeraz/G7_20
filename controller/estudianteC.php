@@ -13,4 +13,34 @@
 
     require_once ("../config/conexion.php");
     require_once("../models/Estudiante.php");  
+    $estudiantes = new Estudiantes();
+
+    $body = json_decode(file_get_contents("php://input"), true);
+
+    switch($_GET["opc"]){
+       
+      case "GetEstudiantes":
+        $datos=$estudiantes->get_estudiantes();
+        echo json_encode($datos);
+      break;
+
+      case "GetEstudiante":
+        $datos=$estudiante-> get_estudiante($body["numeroAlumno"]);
+        echo json_encode($datos);
+      break;
+
+      case "InsertEstudiante":
+        $datos=$estudiantes->insert_estudiante($body["NUMERO_ALUMNO"], $body["NOMBRE"], $body["APELLIDOS"], $body["FECHA_NACIMIENTO"], $body["DIRECCION"], $body["ALTURA"], $body["CARRERA"] )
+        echo json_encode("Estudiante Agregado");
+      break;  
+      
+      case "UpdateEstudiante":
+      break;
+
+      case "DeleteEstudiante":
+      break;
+    }
+
+
+
 ?>
