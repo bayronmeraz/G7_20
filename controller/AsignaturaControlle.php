@@ -26,7 +26,7 @@
         break;
       
         case "Getasignatura":
-          $datos=$asignatura-> get_asignatura($body["CodigoAsignatura"]);
+          $datos= $asignatura-> get_asignatura($body["CodigoAsignatura"]);
           echo json_encode($datos);
           break; 
           
