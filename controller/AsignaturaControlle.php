@@ -22,17 +22,17 @@
 
       case "Getasignaturas":
         $datos = $asignatura-> get_asignaturas();
-        echo json_decode($datos);
+        echo json_encode($datos);
         break;
       
         case "Getasignatura":
           $datos=$asignatura-> get_asignatura($body["CodigoAsignatura"]);
-          echo json_decode($datos);
+          echo json_encode($datos);
           break; 
           
           case "insertasignatura":
             $datos=$asignatura-> insert_asignatura($body["CodigoAsignatura"],$body["NombreAsignatura"], $body["Carrera"], $body["FechaCreacion"], $body["UnidadesValorativas"], $body["PromedioAprobacion"], $body["NumeroEdificio"]);
-            echo json_decode("Asignatura agregada con exito");
+            echo json_encode("Asignatura agregada con exito");
             break;  
     }
 
