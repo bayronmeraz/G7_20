@@ -34,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
           echo json_encode("Docente Agregado");
         break;  
         
-        case "UpdateEstudiante":
+        case "update_docente":
           $datos=$docente->update_docente($body["NumeroDocente"], $body["NombreDocente"], $body["ApellidoDocente"], $body["FechaContratacion"], $body["DireccionDocente"], $body["SalarioDoncente"], $body["ProfesionDocente"] );
           echo json_encode("Docente actualizado");
         break;
   
-        case "DeleteEstudiante":
+        case "delete_docente":
           $datos=$docente->delete_docente($body["NumeroDocente"]);
           echo json_encode("Docente eliminado");
         break;
