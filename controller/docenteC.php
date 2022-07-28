@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Content-Type: application/json');
 
     require_once ("../config/conexion.php");
-    require_once("../models/Estudiante.php");  
+    require_once("../models/docente.php");  
     $docente = new docente();
 
     switch($_GET["opc"]){
