@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     require_once("../models/docente.php");  
     $docente = new docente();
 
+    $body = json_decode(file_get_contents("php://input"), true);
+
     switch($_GET["opc"]){
        
         case "get_docentes":
