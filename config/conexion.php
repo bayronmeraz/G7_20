@@ -1,6 +1,6 @@
 <?php
 class Conectar{
-protected $dbh;
+        protected $dbh;
 
 protected function Conexion(){
 try {
@@ -17,6 +17,6 @@ public function set_names(){
 }
 
 
-}
+    }
 
 ?>
